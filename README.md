@@ -1,5 +1,7 @@
 # FOLD//STRIKE — Molecular Arcade
 
+<img src="rave_long.png" alt="CHIPIX-LOGO" width="760">
+
 FOLD//STRIKE es una adaptación local de Protein Fighter con combate y presentación de inspiración arcade,
 conservando proteínas personalizadas, daño molecular y acceso remoto. Los tiempos
 se diseñaron para estos personajes; no son los datos originales de SF III.
