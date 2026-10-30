@@ -1,0 +1,8 @@
+{
+  "automated_checks_passed": 33,
+  "archive_manifest_verified": true,
+  "packaged_executable_smoke_test": "passed",
+  "native_devices_detected": 0,
+  "physical_xbox_tested": false,
+  "physical_phone_networks_tested": false
+}

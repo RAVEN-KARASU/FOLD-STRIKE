@@ -1,0 +1,19 @@
+{
+  "name": "FOLD//STRIKE",
+  "short_name": "FOLD//STRIKE",
+  "description": "Combate molecular. Proteínas, ciencia y acción arcade.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#000000",
+  "theme_color": "#090c15",
+  "icons": [
+    {
+      "src": "assets/brand/fold_mini.png",
+      "sizes": "202x211",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

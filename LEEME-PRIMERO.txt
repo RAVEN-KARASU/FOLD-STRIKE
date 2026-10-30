@@ -1,0 +1,18 @@
+FOLD//STRIKE — v13
+
+Extrae TODO el ZIP y abre FOLD-STRIKE.exe desde la carpeta extraída.
+Mantén el ejecutable junto a index.html, assets, desktop y vendor.
+No es necesario instalar Python para utilizar el ejecutable de Windows.
+
+Incluye el spot automático tras 40 segundos sin interacción en los menús.
+Puedes volver al menú moviendo el ratón, usando el teclado o el mando.
+
+RAVEN: https://raven-karasu.github.io/page/
+Feedback: https://foldstrike.framer.website/
+
+Instrucciones completas y preparación para GitHub: docs/DISTRIBUCION.md
+Información del juego: README.md
+Integridad de los archivos del paquete: MANIFEST-SHA256.txt
+
+La copia distribuible no contiene partidas guardadas ni perfiles personales.
+Para trasladar tu progreso, utiliza AJUSTES > PROGRESO dentro del juego.

@@ -1,0 +1,73 @@
+/* Dialogue portraits are compositor-only: no per-frame molecular geometry or camera zoom. */
+.dialogue-stage .comic-backdrop{position:absolute;inset:0;background:linear-gradient(125deg,#06080ee8 15%,transparent 15.2% 69%,#03050bd9 69.2%),repeating-linear-gradient(165deg,transparent 0 70px,#e4d8c308 72px 74px)}
+.dialogue-stage .story-fighter,.dialogue-stage .story-fighter.speaking{top:9%;bottom:5%;width:44%;opacity:.35;filter:none;transition:opacity 550ms ease;overflow:hidden;contain:layout paint}
+.dialogue-stage .story-left{left:-3%;right:auto;clip-path:polygon(0 0,95% 5%,85% 100%,0 100%)}
+.dialogue-stage .story-right{right:-3%;left:auto;clip-path:polygon(12% 4%,100% 0,100% 100%,0 100%)}
+.dialogue-stage .story-fighter.speaking{opacity:1}
+.dialogue-stage:has(.dialogue-choices:not([hidden])) .story-right{opacity:1}
+.dialogue-stage .story-fighter img{visibility:visible;filter:none;object-fit:cover;object-position:center 30%;width:100%;height:100%;transform:scale(1.16);animation:comic-breathe 5s ease-in-out infinite alternate;will-change:transform}
+.dialogue-stage .story-right img{animation-delay:-2.3s}
+.dialogue-stage .story-fighter span{display:none}
+.dialogue-stage .story-place{left:5%;top:7%;z-index:2;max-width:65%}
+.dialogue-stage .story-place h2{font-size:clamp(22px,3vw,42px)}
+.dialogue-stage .dialogue-box{left:23%;right:6%;bottom:7%;min-height:20%;max-height:73%;padding:24px 32px 18px;background:#101522f5;color:#faf5e9;border:3px solid #e9e1d4;border-left:8px solid #e9e1d4;box-shadow:10px 10px 0 #02040bcc;transform:skewX(-3deg);overflow:visible}
+.dialogue-stage[data-speaker=hero] .dialogue-box{left:6%;right:23%;background:#1c2837f5}
+.dialogue-stage[data-speaker=boss] .dialogue-box{background:#101019f5;border-color:#bdb6c6}
+.dialogue-stage .dialogue-box h3{background:#e9e1d4;color:#171c29;top:-37px;left:6px;font-size:22px;padding:8px 22px;max-width:90%}
+.dialogue-stage[data-speaker=boss] .dialogue-box h3{background:#c8becb;color:#14111c}
+.dialogue-stage[data-speaker=hero] .dialogue-box h3{left:auto;right:8px}
+.dialogue-stage .dialogue-box p{font-size:clamp(16px,1.7vw,22px);min-height:3em}
+#arcade-flow .dialogue-stage .dialogue-box button[data-action=skip-story]{color:#c8c5ce}
+.dialogue-stage:has(.dialogue-choices:not([hidden])) .dialogue-box{left:28%;right:5%;bottom:5%}
+.dialogue-stage .dialogue-choices{display:flex;flex-direction:column;align-items:stretch;margin-left:15%;gap:7px}
+.dialogue-stage .dialogue-choices[hidden]{display:none}
+#arcade-flow .dialogue-stage .dialogue-choices button{background:#151922;color:#f1eddf;border:2px solid #989ba5;border-radius:2px;text-align:left;box-shadow:4px 4px #0008;padding:9px 14px;transform:skewX(-3deg)}
+#arcade-flow .dialogue-stage .dialogue-choices button.selected,#arcade-flow .dialogue-stage .dialogue-choices button:hover{background:#d4d3d0;color:#151922;border-color:#faf7ef}
+@keyframes comic-breathe{from{transform:scale(1.16) translateY(0)}to{transform:scale(1.18) translateY(-.7%)}}
+/* These overlays never intercept combat input or create another renderer. */
+#ultimate-direction{position:absolute;inset:0;z-index:6;pointer-events:none;--cinema-hue:40}
+#ultimate-direction[hidden]{display:none}
+.cinema-top{position:absolute;inset:0 0 auto;height:8%;background:#05060af0}
+.cinema-bottom{position:absolute;inset:auto 0 0;height:12%;background:#05060af0;padding:10px 5%;box-sizing:border-box;border-top:1px solid hsl(var(--cinema-hue) 60% 60% / .7)}
+.cinema-bottom small{display:block;letter-spacing:.4em;font-size:10px;color:#dcccb7}
+.cinema-bottom strong{font:italic 800 clamp(16px,2.3vw,32px) var(--display-font);color:#fff1d6}
+.cinema-lines{position:absolute;inset:8% 0 12%;box-shadow:inset 0 0 85px #0007;border-inline:12px solid hsl(var(--cinema-hue) 60% 50% / .15)}
+#ultimate-direction[data-shot=finish] .cinema-lines{border-inline-color:hsl(var(--cinema-hue) 80% 70% / .5)}
+.pause-menu-open #overlay{visibility:hidden;pointer-events:none}
+#pause-menu{position:absolute;inset:0;z-index:40;display:grid;place-items:center;background:#050911dd;color:#f3ecdf;overflow:auto}
+#pause-menu[hidden]{display:none}
+#pause-menu>div{width:min(580px,87%);padding:22px 0}
+#pause-menu small{letter-spacing:.3em;color:#c4b59c;font:700 11px var(--display-font)}
+#pause-menu h2{font:900 italic clamp(28px,4vw,48px) var(--display-font);margin:7px 0}
+#pause-menu p{font:15px var(--body-font);color:#bcbec7}
+#pause-menu nav{display:grid;gap:10px;margin-top:22px}
+#pause-menu button{width:100%;text-align:left;padding:14px 20px;background:linear-gradient(120deg,#343747cc,#111726e8);border:1px solid #8e929e;border-radius:12px;color:#f7f1e6;font:800 20px var(--display-font);box-shadow:inset 0 1px #ffffff30,0 6px 18px #0004}
+#pause-menu button span{display:block;font:13px var(--body-font);color:#c1c3ce;margin-top:4px}
+#pause-menu button:hover,#pause-menu button:focus-visible,#pause-menu button.pad-focus{background:#505562;border-color:#e2ddd1;outline:2px solid #a3a5ad;outline-offset:2px}
+#pause-menu .pause-note{font-size:12px;margin-bottom:0}
+#arena-backdrop{position:absolute;inset:0;background-position:center;background-size:cover;pointer-events:none;contain:strict}
+html[data-stage=membrane] #arena-backdrop{display:none}
+html[data-stage=synapse] #arena-backdrop{background-image:url('assets/arenas/synapse.svg')}
+html[data-stage=cryo] #arena-backdrop{background-image:url('assets/arenas/cryo.svg')}
+html[data-stage=reactor] #arena-backdrop{background-image:url('assets/arenas/reactor.svg')}
+html[data-stage=nucleus] #arena-backdrop{background-image:url('assets/arenas/nucleus.svg')}
+.final-boss #arena-backdrop{filter:brightness(.48) saturate(.75)}
+.stages{display:block!important;width:100%}.stages .pill{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;border:0!important;background:none!important}
+.stages button{height:100px;display:flex;align-items:flex-end;justify-content:center;border:2px solid #585c69!important;border-radius:8px!important;font-weight:800;color:#fff!important;text-shadow:0 2px 4px #000;background-position:center!important;background-size:cover!important;box-shadow:inset 0 -35px 25px #000a;padding:9px!important}
+.stages button.on{border-color:#e7d3a1!important;outline:2px solid #e7d3a1;outline-offset:1px}
+.stages [data-stage=membrane]{background:radial-gradient(ellipse at 30% 30%,#497878,#142d42 55%,#070a10)!important}
+.stages [data-stage=synapse]{background-image:url('assets/arenas/synapse.svg')!important}
+.stages [data-stage=cryo]{background-image:url('assets/arenas/cryo.svg')!important}
+.stages [data-stage=reactor]{background-image:url('assets/arenas/reactor.svg')!important}
+.stages [data-stage=nucleus]{background-image:url('assets/arenas/nucleus.svg')!important}
+.usb-guide{max-width:900px;margin:8px auto;padding:10px 15px;text-align:left;background:#101828e6;border:1px solid #686e7a;border-radius:8px;font-size:13px;line-height:1.5}
+.usb-guide p{font-size:13px;margin:4px 0}.usb-guide a{color:#e1d2b8}.usb-guide[hidden]{display:none}
+.lan-panel:has(.usb-guide:not([hidden])) h1{font-size:clamp(21px,3vw,36px)}
+.lan-panel:has(.usb-guide:not([hidden])) .lan-players svg{max-height:145px}
+#usb-refresh{margin-left:10px}
+.usb-player-address{display:block;max-width:100%;font-size:11px}.usb-player-address select{display:block;box-sizing:border-box;width:100%;max-width:100%;min-width:0;font-size:12px}
+#arcade-flow #usb-refresh{background:#343b4b!important;color:#f5eddd!important;border:1px solid #a4a7af}
+#arcade-flow #usb-refresh:focus-visible,#arcade-flow #usb-refresh.pad-focus{background:#ced0d5!important;color:#131823!important}
+@media(max-height:620px){#pause-menu>div{padding:12px 0}#pause-menu nav{gap:6px;margin-top:8px}#pause-menu button{padding:9px 16px;font-size:17px}#pause-menu h2{font-size:27px}.dialogue-stage .dialogue-box{padding:15px 22px 10px;bottom:4%}.dialogue-stage .dialogue-box p{font-size:15px;min-height:2.5em;margin-bottom:8px}.dialogue-stage .dialogue-choices{gap:4px}#arcade-flow .dialogue-stage .dialogue-choices button{padding:5px 10px;font-size:14px}.dialogue-stage .dialogue-box h3{font-size:18px;top:-32px}}
+@media(max-width:650px){.dialogue-stage .story-fighter{width:65%;top:15%;bottom:32%}.dialogue-stage .story-left{left:-18%}.dialogue-stage .story-right{right:-18%}.dialogue-stage .dialogue-box,.dialogue-stage[data-speaker=hero] .dialogue-box,.dialogue-stage:has(.dialogue-choices:not([hidden])) .dialogue-box{left:5%;right:5%;bottom:5%;max-height:64vh;overflow-y:auto;padding:15px}.dialogue-stage .dialogue-box h3{position:static;margin-bottom:10px;display:inline-block}.dialogue-stage .dialogue-box p{font-size:16px}.dialogue-stage .dialogue-choices{margin-left:0}.dialogue-stage .story-place{max-width:85%}.dialogue-stage .story-place h2{font-size:23px}}
+@media(prefers-reduced-motion:reduce){.dialogue-stage .story-fighter img{animation:none}.dialogue-stage .story-fighter{transition:none}}
