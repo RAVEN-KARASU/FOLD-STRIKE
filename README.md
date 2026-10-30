@@ -197,33 +197,6 @@ La importación PDB/mmCIF/AlphaFold, las representaciones moleculares y los mapa
 siguen en el juego. Los contactos de combate continúan dependiendo de la geometría
 molecular: todavía requieren ajuste de equilibrio entre estructuras muy distintas.
 
-## Presentación
-
-Pantallas completas de selección, Super Arts, VS, ganador, continuación y resultados
-con composición inspirada en las referencias de SF3. Los retratos representan los
-modelos moleculares jugables. Vida verde y retratos arriba, energía de Super Art
-abajo, contador de combo, respuesta visual de parry y super, y tres ambientes
-cromáticos: Membrane, Synapse y Cryo. Estos ambientes comparten el escenario celular;
-no son tres escenarios con geometría diferente. La presentación incluye cuatro
-tarjetas iniciales, fondo y logotipo animados y tipografías Barlow locales. Los
-especiales muestran una breve inserción cinematográfica; los Super Arts conservan
-sus 12 cuadros de pausa de impacto. El efecto visual también se transmite al rival
-remoto. AJUSTES permite elegir dificultad, colores
-moleculares de las estructuras importadas y ambiente. El plantel y los personajes
-de campaña mantienen su paleta de selección durante el combate. MAPAS muestra las matrices de desviación estructural y el
-indicador molecular durante la pelea. El indicador de deformación sigue activo
-al ocultar los mapas; las matrices se calculan solo mientras están visibles.
-Los mapas están **activos por defecto**, compactos (64 px, 65 % de opacidad), en las esquinas exteriores bajo el HUD. Las preferencias antiguas de mayor tamaño se migran una vez. En AJUSTES puedes ocultarlos, cambiar su
-tamaño (48, 64 u 80 px) y opacidad, y elegir entre desviación estructural (el mapa original) y
-densidad de contactos Cα a 8 Å. El primer mapa es una medida geométrica durante el
-juego, no el PAE predicho por AlphaFold. Las preferencias
-se guardan en este navegador. El cálculo se realiza en el Worker.
-Las escenas se separan con 320 ms de cierre a negro, 300 ms de pausa y 500 ms de apertura. La simulación y las confirmaciones se suspenden durante ese intervalo. Entre rondas hay dos segundos de resultado y una cuenta **3, 2, 1** antes de FIGHT.
-El KO permanece durante 2,8 segundos, con un rótulo mayor y sonido propio. Las
-pantallas de ganador, resultados, diálogo y créditos también esperan el intervalo
-negro antes de presentar el nuevo contenido. La portada entra al modo con un clic,
-sin un botón adicional PRESS START ni números de diapositiva en la introducción.
-
 ## Música y efectos
 
 Se incluyen 24 grabaciones: las 15 de `../sounds/background` y las nueve nuevas
@@ -268,30 +241,6 @@ un perfil propio de Edge con reproducción automática para iniciar la música s
 una pulsación previa. Si el navegador bloquea la reproducción automática, el siguiente clic
 o tecla normal habilita el audio, sin un botón adicional de activación. Un mando
 por sí solo puede no habilitarlo. La reproducción se detiene al ocultar la pestaña.
-
-## Diálogos y desenlace
-
-Las cinco aperturas muestran fichas de contexto e investigación. Las veinte escenas
-previas y las veinte posteriores incluyen diálogos propios. Cada escena incluye una decisión
-con cuatro opciones que añade una respuesta del jefe y retoma la ruta principal:
-no cambia la dificultad ni crea bucles. Cada jefe tiene su explicación, analogía,
-objetivo y dato curioso; los términos se explican en lenguaje cotidiano. Las
-referencias educativas están en `assets/presentation/README.md`.
-
-- Mando: **A / B / X / Y** responden directamente a las opciones 1 / 2 / 3 / 4.
-  Cruceta/stick permite revisar las opciones; **Menu** confirma la enfocada.
-- Teclado: flechas y **Enter**, o **1 / 2 / 3 / 4** para responder directamente.
-- Ratón: pulsa una de las respuestas cuando termine de aparecer el texto.
-- Una primera confirmación completa el texto; la siguiente avanza. Puedes saltar
-  una escena. Volver a una línea resuelta no vuelve a insertar respuestas.
-
-La victoria de cada capítulo conserva su escena posterior. Tras completar los
-cinco capítulos se abre el desplazamiento continuo de créditos.
-La finalización queda pendiente en el guardado hasta llegar al final del recorrido.
-Si sales antes, **Reanudar / ver desenlace** permite recuperarla. La portada también
-ofrece acceso a los créditos. El botón de volver desde una victoria ya no evita
-el diálogo final. Los jefes finales oscurecen el fondo, conservando el color de
-los personajes y del HUD.
 
 ## Fluidez y conexión
 
@@ -403,29 +352,6 @@ controles y reglas corresponden a la versión anterior. El respaldo anterior a e
 revisión está en `../analisis_sf3/flujo_sf3/originales/`.
 El respaldo previo a la incorporación de campaña está en
 `../analisis_sf3/campana_sf3/originales/`.
-
-## Revisión de fluidez, audio y decisiones
-
-`../analisis_sf3/pulido_v2/validar.py` comprueba en Edge las grabaciones completas,
-la reproducción de Mitsui y Mikio, navegación rápida sin acumulación de efectos,
-mapas en esquinas opuestas, opciones de diálogo, pausas en negro y el recorrido
-de los veinte encuentros hasta los créditos. No equivale a una prueba con un
-mando físico. Incluye la batería existente de tiempos, reglas y geometría.
-
-En la muestra de seis segundos por pareja, con ataques y CPU activos, mapas
-visibles, Edge sin interfaz a 1280×800 y AMD Radeon, el dibujo pasó de 40,7 a
-59,3/s para 529 residuos y de 20,4 a 59,6/s para 1230 residuos. Son muestras
-breves de ese equipo, no mínimos garantizados. Resultados y perfiles:
-`../analisis_sf3/pulido_v2/performance-before.json` y
-`../analisis_sf3/pulido_v2/rendimiento.json`.
-
-Los datos históricos de las revisiones previas medían entrenamiento sin ataques
-y no son directamente comparables con esta prueba. El ejecutable fue comprobado
-por separado con solicitudes de archivos, rangos de audio y rutas fuera de su
-carpeta. El código y las instrucciones de compilación están en `desktop/`.
-
-Respaldo antes de esta revisión: `../analisis_sf3/pulido_v2/originales/`.
-
 
 ## Revisión de especiales, diálogos y resultados
 
@@ -588,45 +514,6 @@ Las nueve grabaciones nuevas se reproducen con ganancia individual 0,55
 No es una normalización de sonoridad medida de todo el catálogo. Alert of oz es
 exclusivo del contexto final de campaña; los ajustes musicales de Arcade no lo sustituyen.
 
-### Tutorial y entrenamiento
-
-El tutorial usa la arena real con siete objetivos: moverse, saltar, conectar tres
-impactos, lanzar un especial, bloquear, contraatacar y activar un clímax. Cada paso
-se comprueba mediante movimiento o estadísticas reales; al cumplirlo avanza tras
-una breve pausa. Permite repetir o saltar pasos. Las lecciones de defensa usan
-ondas de práctica que pueden bloquearse de pie, incluso entre estructuras de
-alturas distintas. No se conceden bloqueos o impactos automáticamente.
-
-TRAINING permite rival quieto, bloqueando o atacando. La energía es ilimitada y
-R reinicia la arena. El tutorial mantiene habilitado el contraataque para poder
-enseñarlo aunque se haya desactivado para los combates normales.
-
-### Contraataques y choques
-
-Después de un bloqueo, mantener bloqueo y pulsar el especial dentro de **0,22 s**
-activa GUARD COUNTER. Consume **50 puntos de energía** (media carga). Requiere estar
-en el suelo y no estar aturdido; puede fallar por distancia o ser interrumpido.
-La ventana utiliza tiempo de simulación: no se acorta durante una detención de impacto.
-La CPU Realista también puede decidir utilizarlo con las mismas restricciones.
-
-Dos especiales activos que se encuentran físicamente producen CLASH. Si sus lanzamientos
-están separados por hasta **3 fotogramas**, ambos se anulan con retroceso; si hay
-más diferencia, continúa el iniciado antes. Se comparan sus edades en la simulación,
-independientemente del orden P1/P2. El choque introduce una pausa de 0,26 s y un
-efecto visual, sin daño gratuito. Los clímax de tres cargas quedan fuera. Estadísticas
-incluye choques, choques ganados y contraataques. Se pueden desactivar estas reglas
-fuera de campaña y quedan fijadas al iniciar el combate.
-
-### Torneo de VERSUS
-
-Actívalo en AJUSTES → COMBATE. Es una **serie local entre dos jugadores**, al primero
-en ganar dos o tres combates (mejor de tres/cinco); no es un cuadro de eliminatorias
-con varios participantes. Cada combate usa las rondas y el tiempo elegidos. Los
-personajes y las reglas permanecen fijos durante la serie, aunque se cambien las
-preferencias para futuros encuentros. Los empates de ronda no conceden puntos.
-Tras cada victoria aparece el marcador de la serie; al completarla, el campeón.
-Las estadísticas siguen siendo opcionales. REMOTO mantiene sus combates habituales.
-
 ### Verificación
 
 `../analisis_sf3/arcade_v7/validar.py` comprueba el flujo completo, selección musical,
@@ -639,3 +526,5 @@ junto a estos scripts. Respaldo anterior: `../analisis_sf3/arcade_v7/originales/
 Las pruebas táctiles usan un navegador de escritorio con entrada táctil emulada;
 queda pendiente confirmar el comportamiento en un teléfono físico, especialmente
 Safari/iOS y las opciones de accesibilidad del dispositivo.
+
+© 2026 Structural Bioinformatics & Bioactive Compound Synthesis Lab - UFRO · Powered by RAVEN | プログラム.
