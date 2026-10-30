@@ -1,6 +1,6 @@
 # FOLD//STRIKE — Molecular Arcade
 
-<img src="logo.png" alt="logo" width="250">
+<img src="logolow.png" alt="logo" width="250">
 
 FOLD//STRIKE es una adaptación local de Protein Fighter con combate y presentación de inspiración arcade,
 conservando proteínas personalizadas, daño molecular y acceso remoto. Los tiempos
